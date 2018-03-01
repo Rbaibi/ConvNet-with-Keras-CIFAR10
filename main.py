@@ -52,7 +52,7 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 #Early stopping
 #training will automatically stop if no progress is made after 5 epochs
 from keras.callbacks import EarlyStopping
-early_stopping_monitor = EarlyStopping(patience=4)
+early_stopping_monitor = EarlyStopping(patience=8)
 
 #fit
 model.fit(predictors, target, validation_split=0.3, epochs=40,callbacks = [early_stopping_monitor])
