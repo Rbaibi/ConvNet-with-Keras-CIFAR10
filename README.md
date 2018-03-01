@@ -1,4 +1,11 @@
-"# NN-with-Tensorflow-MNIST-Dataset" 
-"# ConvNet-with-Keras-CIFAR10" 
-"# ConvNet-with-TFLearn-Kaggle-Plant-Seedlings-Dataset" 
-"# ConvNet-with-Keras-CIFAR10" 
+# ConvNet-with-Keras-CIFAR10
+
+This is a simple Convolutional Neural Network with Keras.
+It scores around 95% accuracy on the CIFAR10 dataset. 
+
+
+## Prerequisites
+
+Keras
+
+> ''pip install keras'' 
