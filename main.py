@@ -9,13 +9,13 @@ from keras.utils import to_categorical
 
 #Load the data
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
-# one hot encoding
-y_train = keras.utils.to_categorical(y_train, num_classes)
-y_test = keras.utils.to_categorical(y_test, num_classes)
-
 
 # number of classes
 num_classes = 10
+
+# one hot encoding
+y_train = keras.utils.to_categorical(y_train, num_classes)
+y_test = keras.utils.to_categorical(y_test, num_classes)
 
 
 predictors =x_train
@@ -65,7 +65,7 @@ model.save('/output/model_file.h5')
 
 
 #predict
-predictions = my_model.predict(x_test)
-probability_true = predictions[:,1]
-
+scores = model.evaluate(x_test, y_test, verbose=1)
+print('Test loss:', scores[0])
+print('Test accuracy:', scores[1])
 
