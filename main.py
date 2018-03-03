@@ -38,7 +38,10 @@ model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 
 # Compile model
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy'
+              , optimizer='adam'
+              , metrics=['accuracy'])
+
 print(model.summary())
 
 #Early stopping
@@ -46,7 +49,11 @@ print(model.summary())
 early_stopping_monitor = EarlyStopping(patience=2)
 
 # Fit the model
-model.fit(predictors, target, validation_split=0.3, validation_data=(test_predictors, test_target), epochs=epochs, callbacks = [early_stopping_monitor])
+model.fit(predictors, target
+          , validation_split=0.3
+          , validation_data=(test_predictors, test_target)
+          , epochs=epochs
+          , callbacks = [early_stopping_monitor])
 
 #Print Accuracy
 scores = model.evaluate(test_predictors, test_target)
