@@ -18,9 +18,9 @@ epochs = 40
 
 #Normaliation
 predictors = x_train.astype('float32')
-predictors /= 255.0
+predictors /= 255
 test_predictors = x_test.astype('float32')
-test_predictors /= 255.0
+test_predictors /= 255
 
 #One hot encoding
 target = np_utils.to_categorical(y_train)
